@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Pricing — Riverside Movement Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F7F1E8; --sand:#EFE4D3; --paper:#FFFBF5;
+  --ink:#2A2320; --ink-soft:#5E534C; --muted:#8C8078;
+  --clay:#B5482A; --clay-dark:#933520; --sage:#7F8F6E; --sage-soft:#DCE3D2;
+  --night:#24301F; --night-2:#1B2417;
+  --serif:"Fraunces","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --r:18px; --wrap:1160px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 17px/1.6 var(--sans);overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,6vw,4.4rem)}
+h2{font-size:clamp(1.9rem,4vw,2.8rem)}
+h3{font-size:1.4rem}
+p{margin:0 0 1em}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+@media (max-width:480px){.wrap{padding:0 16px}}
+.eyebrow{font:700 .78rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--clay);margin-bottom:14px;display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:999px;font:700 .95rem var(--sans);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--clay);color:#fff}
+.btn-primary:hover{background:var(--clay-dark)}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-small{padding:9px 18px;font-size:.85rem}
+
+/* announcement + header */
+.announce{background:var(--ink);color:var(--sand);text-align:center;font-size:.85rem;padding:8px 16px}
+.announce a{color:#fff;font-weight:700}
+header.site{position:sticky;top:0;z-index:50;background:rgba(247,241,232,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(42,35,32,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-text{font-family:var(--serif);font-size:1.25rem;line-height:1;font-weight:600}
+.logo-text small{display:block;font:500 .66rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.menu{display:flex;align-items:center;gap:6px;list-style:none;margin:0;padding:0}
+.menu>li{position:relative}
+.menu>li>a{display:block;padding:10px 14px;text-decoration:none;font-weight:500;font-size:.95rem;border-radius:999px}
+.menu>li>a:hover{background:var(--sand)}
+.menu .caret{display:inline-block;width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-3px);margin-left:7px}
+.drop{position:absolute;left:0;top:100%;min-width:220px;background:var(--paper);border-radius:14px;box-shadow:0 18px 40px rgba(42,35,32,.14);padding:10px;list-style:none;margin:0;opacity:0;visibility:hidden;transform:translateY(6px);transition:.15s}
+.menu>li:hover .drop,.menu>li:focus-within .drop{opacity:1;visibility:visible;transform:none}
+.drop a{display:block;padding:9px 12px;border-radius:8px;text-decoration:none;font-size:.92rem}
+.drop a:hover{background:var(--sand)}
+.nav-tools{display:flex;align-items:center;gap:6px}
+.icon-btn{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:transparent;border:0;color:var(--ink);cursor:pointer;text-decoration:none}
+.icon-btn:hover{background:var(--sand)}
+.burger{display:none}
+@media (max-width:920px){
+  .burger{display:grid}
+  .menu{position:absolute;left:0;right:0;top:76px;flex-direction:column;align-items:stretch;background:var(--paper);padding:12px 16px 20px;border-bottom:1px solid rgba(42,35,32,.1);display:none;max-height:calc(100vh - 76px);overflow:auto}
+  .menu.open{display:flex}
+  .menu>li>a{padding:14px 8px;border-radius:0;border-bottom:1px solid var(--sand)}
+  .drop{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;background:transparent;padding:0 0 8px 12px;min-width:0}
+}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:72px 0 96px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero p.lead{font-size:1.15rem;color:var(--ink-soft);max-width:34em}
+.facts{list-style:none;padding:0;margin:26px 0 34px;display:grid;gap:12px}
+.facts li{display:flex;gap:12px;align-items:flex-start}
+.facts li::before{content:"";flex:none;width:10px;height:10px;margin-top:9px;border-radius:50%;background:var(--sage);box-shadow:0 0 0 5px var(--sage-soft)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.hero-art{position:relative;aspect-ratio:4/5;border-radius:220px 220px var(--r) var(--r);background:linear-gradient(170deg,#F2C9A8 0%,#E39A72 45%,#B5482A 100%);overflow:hidden}
+.hero-art svg{position:absolute;inset:0;width:100%;height:100%}
+.hero-badge{position:absolute;left:-18px;bottom:36px;background:var(--paper);border-radius:14px;padding:14px 18px;box-shadow:0 14px 30px rgba(42,35,32,.15);font-size:.88rem;max-width:210px}
+.hero-badge strong{font-family:var(--serif);font-size:1.3rem;display:block}
+@media (max-width:860px){.hero{padding:48px 0 64px}.hero-grid{grid-template-columns:1fr;gap:40px}.hero-art{max-width:420px;width:100%;margin:0 auto}.hero-badge{left:12px}}
+
+/* features */
+.section{padding:96px 0}
+@media (max-width:600px){.section{padding:64px 0}}
+.section-head{max-width:640px;margin-bottom:48px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:var(--paper);border-radius:var(--r);padding:30px;display:flex;flex-direction:column;border:1px solid rgba(42,35,32,.06)}
+.card .art{height:150px;border-radius:12px;margin-bottom:24px;overflow:hidden}
+.card p{color:var(--ink-soft);flex:1}
+.more{font-weight:700;text-decoration:none;color:var(--clay);display:inline-flex;gap:6px;align-items:center}
+.more:hover{text-decoration:underline}
+@media (max-width:860px){.features{grid-template-columns:1fr}}
+
+/* schedule (dark) */
+.dark{background:var(--night);color:#EDE6DA}
+.dark h2{color:#fff}
+.dark .eyebrow{color:#E9A47F}
+.sched{display:grid;gap:0;border-top:1px solid rgba(255,255,255,.14)}
+.row{display:grid;grid-template-columns:150px 1fr auto auto;gap:24px;align-items:center;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.row .when{font-weight:700;color:#fff}
+.row .when span{display:block;font-weight:400;color:#B9C2AE;font-size:.9rem}
+.row h3{margin:0 0 4px;color:#fff;font-size:1.3rem}
+.row p{margin:0;color:#B9C2AE;font-size:.95rem}
+.tag{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.08);white-space:nowrap}
+.tag.free{background:#E9A47F;color:var(--night-2)}
+.dark .btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}
+@media (max-width:760px){.row{grid-template-columns:1fr auto;gap:8px 16px}.row .when{grid-column:1/-1}.row .act{grid-column:1/-1}}
+
+/* pricing */
+.prices{display:grid;gap:18px;max-width:880px}
+.price{display:grid;grid-template-columns:1fr auto auto;gap:24px;align-items:center;background:var(--paper);border-radius:var(--r);padding:28px 32px;border:1px solid rgba(42,35,32,.08)}
+.price.feature{background:var(--sand);border-color:var(--clay)}
+.price h3{margin-bottom:6px}
+.price p{margin:0;color:var(--ink-soft);font-size:.95rem}
+.amount{font-family:var(--serif);font-size:2.2rem;font-weight:600;white-space:nowrap}
+.amount small{font:500 .85rem var(--sans);color:var(--muted)}
+.ribbon{display:inline-block;background:var(--clay);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:10px}
+@media (max-width:640px){.price{grid-template-columns:1fr auto;padding:24px 20px}.price .btn{grid-column:1/-1}}
+
+/* workshop band */
+.workshop{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;background:var(--sage-soft);border-radius:28px;padding:56px}
+@media (max-width:860px){.workshop{grid-template-columns:1fr;padding:32px 22px}}
+
+/* app strip */
+.app{background:var(--clay);color:#fff;padding:56px 0}
+.app .wrap{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.app h2{color:#fff;margin:0 0 6px;font-size:clamp(1.6rem,3vw,2.2rem)}
+.app p{margin:0;opacity:.9}
+.badges{display:flex;gap:12px;flex-wrap:wrap}
+.badge{display:flex;align-items:center;gap:10px;background:var(--ink);color:#fff;border-radius:12px;padding:10px 18px;text-decoration:none;min-width:170px}
+.badge span{font-size:.7rem;opacity:.75;display:block;line-height:1.2}
+.badge strong{font-size:1rem;line-height:1.2}
+
+/* testimonials */
+.quotes{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+blockquote{margin:0;background:var(--paper);border-radius:var(--r);padding:32px;font-family:var(--serif);font-size:1.25rem;line-height:1.45}
+blockquote footer{font:500 .9rem var(--sans);color:var(--muted);margin-top:16px}
+@media (max-width:760px){.quotes{grid-template-columns:1fr}}
+
+/* footer */
+footer.site{background:var(--night-2);color:#C9CFBF;padding:72px 0 32px;font-size:.95rem}
+footer.site h4{font:700 .78rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#fff;margin:0 0 16px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.foot-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.foot-grid a{text-decoration:none}
+.foot-grid a:hover{color:#fff;text-decoration:underline}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:4px 16px}
+.social{display:flex;gap:10px;margin-top:18px}
+.social a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:grid;place-items:center}
+.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;border-top:1px solid rgba(255,255,255,.12);margin-top:56px;padding-top:24px;font-size:.85rem}
+.legal nav{display:flex;flex-wrap:wrap;gap:18px}
+.legal a{text-decoration:none}
+.demo-note{color:#7E8775;font-size:.8rem;margin-top:14px}
+@media (max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.foot-grid{grid-template-columns:1fr}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+
+<div class="announce">New this month: Breathwork &amp; Cold Plunge on Sundays. <a href="index.html#workshops">Save a spot</a></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="index.html" aria-label="Riverside Movement Studio home">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#B5482A"/>
+        <circle cx="20" cy="15" r="6" fill="#F7F1E8"/>
+        <path d="M5 26c5-4 10-4 15 0s10 4 15 0" fill="none" stroke="#F7F1E8" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M8 31c4-3 8-3 12 0s8 3 12 0" fill="none" stroke="#F7F1E8" stroke-width="2.4" stroke-linecap="round" opacity=".6"/>
+      </svg>
+      <span class="logo-text">Riverside<small>Movement Studio</small></span>
+    </a>
+    <ul class="menu" id="menu">
+      <li><a href="index.html#schedule">Schedule + Pricing<i class="caret"></i></a>
+        <ul class="drop"><li><a href="index.html#schedule">Weekly schedule</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="#pricing">Intro offer</a></li></ul></li>
+      <li><a href="index.html#styles">Class Styles<i class="caret"></i></a>
+        <ul class="drop"><li><a href="index.html#styles">Vinyasa</a></li><li><a href="index.html#styles">Lunchtime HIIT</a></li><li><a href="index.html#styles">Reformer Pilates</a></li><li><a href="index.html#styles">Candlelight Yin</a></li></ul></li>
+      <li><a href="index.html#workshops">Workshops<i class="caret"></i></a>
+        <ul class="drop"><li><a href="index.html#workshops">Breathwork &amp; Cold Plunge</a></li><li><a href="index.html#workshops">Private events</a></li></ul></li>
+      <li><a href="index.html#about">About<i class="caret"></i></a>
+        <ul class="drop"><li><a href="index.html#about">Our story</a></li><li><a href="#visit">Visit us</a></li><li><a href="#visit">Contact</a></li></ul></li>
+    </ul>
+    <div class="nav-tools">
+      <a class="icon-btn" href="#" aria-label="Account">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+      </a>
+      <a class="icon-btn" href="#" aria-label="Cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 7h14l-1.2 12H6.2z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+      </a>
+      <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" style="padding-bottom:40px">
+  <div class="wrap">
+    <span class="eyebrow">Schedule + Pricing</span>
+    <h1>Pricing, plainly.</h1>
+    <p class="lead" style="font-size:1.15rem;color:var(--ink-soft);max-width:36em">No sign-up fees, no contracts, no surprise renewals. Your first class is free whichever way you choose to practise.</p>
+    <div class="cta-row"><a class="btn btn-primary" href="index.html#schedule">View schedule</a><a class="btn btn-ghost" href="#faq">Read the FAQs</a></div>
+  </div>
+</section>
+
+<section class="section" id="pricing" style="padding-top:24px">
+  <div class="wrap">
+    <div class="prices">
+      <div class="price">
+        <div><h3>Drop-in</h3><p>One class, any style. Valid for 30 days.</p></div>
+        <div class="amount">$22</div>
+        <button class="btn btn-ghost btn-small" type="button">Buy</button>
+      </div>
+      <div class="price">
+        <div><h3>Reformer drop-in</h3><p>Saturday 9:30 am Reformer Pilates. First-timers pay $15.</p></div>
+        <div class="amount">$28</div>
+        <button class="btn btn-ghost btn-small" type="button">Buy</button>
+      </div>
+      <div class="price">
+        <div><h3>10-class pack</h3><p>Any class style, valid for six months, shareable with a partner.</p></div>
+        <div class="amount">$180</div>
+        <button class="btn btn-ghost btn-small" type="button">Buy</button>
+      </div>
+      <div class="price feature">
+        <div><span class="ribbon">Most loved</span><h3>Monthly membership</h3><p>Unlimited classes, 20% off workshops, one guest pass a month. Pause anytime.</p></div>
+        <div class="amount">$139<small>/mo</small></div>
+        <button class="btn btn-primary btn-small" type="button">Buy</button>
+      </div>
+      <div class="price">
+        <div><h3>Breathwork &amp; Cold Plunge Workshop</h3><p>Sundays 4–6 pm. Members save 20%.</p></div>
+        <div class="amount">$45</div>
+        <button class="btn btn-ghost btn-small" type="button">Buy</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Good to know</span>
+      <h2>Questions we hear a lot</h2>
+    </div>
+    <div class="sched">
+      <div class="row" style="grid-template-columns:1fr"><div><h3>Is the morning Vinyasa really free?</h3><p>Yes. Monday, Wednesday and Friday at 7:00 am are free community classes. Reserving a mat helps us plan.</p></div></div>
+      <div class="row" style="grid-template-columns:1fr"><div><h3>What should I bring?</h3><p>Just yourself and water. Mats, towels and props are included; grip socks are required for Reformer.</p></div></div>
+      <div class="row" style="grid-template-columns:1fr"><div><h3>Where do I park?</h3><p>There's a free lot behind the building at 1200 E 5th St, plus street parking on weekends.</p></div></div>
+      <div class="row" style="grid-template-columns:1fr"><div><h3>Can I pause my membership?</h3><p>Anytime, for up to two months a year, from your account or at the front desk.</p></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site" id="visit">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="index.html" style="color:#fff;margin-bottom:20px">
+          <svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#B5482A"/><circle cx="20" cy="15" r="6" fill="#F7F1E8"/><path d="M5 26c5-4 10-4 15 0s10 4 15 0" fill="none" stroke="#F7F1E8" stroke-width="2.4" stroke-linecap="round"/></svg>
+          <span class="logo-text">Riverside<small style="color:#9AA38F">Movement Studio</small></span>
+        </a>
+        <p>1200 E 5th St<br>Austin, TX</p>
+        <p>Free parking in the lot behind the building.<br><a href="tel:+15125550142">(512) 555-0142</a></p>
+        <div class="social">
+          <a href="#" aria-label="Social link 1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/></svg></a>
+          <a href="#" aria-label="Social link 2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M9 11h6"/></svg></a>
+          <a href="#" aria-label="Social link 3"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M10 9.5v5l4-2.5z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <div class="hours"><span>Mon–Fri</span><span>6am – 8pm</span><span>Sat–Sun</span><span>8am – 6pm</span></div>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul><li><a href="index.html#schedule">Schedule</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="index.html#workshops">Workshops</a></li><li><a href="#">Teacher training</a></li><li><a href="#">Gift cards</a></li></ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul><li><a href="#">New student guide</a></li><li><a href="#">FAQs</a></li><li><a href="#">Careers</a></li><li><a href="#visit">Contact</a></li></ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Riverside Movement Studio. All rights reserved.</span>
+      <nav><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Waiver</a><a href="#">Accessibility</a></nav>
+    </div>
+    <p class="demo-note">Demo site for testing — not a real business.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'),m=document.getElementById('menu');
+  b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o);});
+  m.addEventListener('click',function(e){if(e.target.tagName==='A'&&window.innerWidth<=920&&!e.target.querySelector('.caret')){m.classList.remove('open');b.setAttribute('aria-expanded','false');}});
+})();
+</script>
+<script src="https://app-ai-600.dev.sweatpals.com/static/embed/community/booking-chat/script.js" data-key="sp_pk_rvt7knDTaGFmeFOYAQjJt58j4cFX0dcL" data-holdout-pct="0" data-name="Riverside Movement Studio" data-color="#2F6F62" async></script>
+</body>
+</html>
